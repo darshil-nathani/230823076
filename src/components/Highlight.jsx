@@ -1,10 +1,12 @@
-import React from 'react'
+import React from 'react';
 
 export const Highlight = () => {
     return (
-        <div className='flex flex-col justify-center items-center'>
-            <span><button className='flex items-center justify-center bg-gray-300 rounded-full w-16 h-16 text-5xl pb-2 font-thin'>+</button></span>
-            <span className='text-lg'>New</span>
+        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+            <span>
+                <button style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#d1d5db', borderRadius: '9999px', width: '4rem', height: '4rem', fontSize: '3rem', fontWeight: 'lighter',paddingBottom: '0.5rem' }}>+</button>
+            </span>
+            <span style={{ fontSize: '1.25rem' }}>New</span>
         </div>
-    )
-}
+    );
+};
