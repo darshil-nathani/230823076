@@ -1,8 +1,8 @@
 import React from 'react'
 
-export const Button = ({ title, className }) => {
+export const Button = ({ title, style }) => {
     return (
-        <button className={className}>
+        <button style={style}>
             {title}
         </button>
     )

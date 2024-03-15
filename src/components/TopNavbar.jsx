@@ -18,7 +18,7 @@ export const TopNavbar = () => {
                         <path fill="currentColor" fillRule="evenodd" d="M12 2.25A9.75 9.75 0 0 0 2.25 12a9.724 9.724 0 0 0 3 7.036V21.5a.75.75 0 0 0 .987.712l2.78-.927A9.745 9.745 0 0 0 12 21.75c5.385 0 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25M3.75 12a8.25 8.25 0 1 1 5.516 7.787a.75.75 0 0 0-.486-.004l-2.03.676v-1.75a.75.75 0 0 0-.25-.56A8.228 8.228 0 0 1 3.75 12" clipRule="evenodd" />
                     </svg>
                 </button>
-                <Button title="+ Create A Post" className="shadow-xl shadow-gray-400 flex text-2xl justify-center items-center rounded-full px-8 text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500" style={{ boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }} />
+                <Button title="+ Create A Post"  style={{ boxShadow: "5px 5px 5px 1px rgb(180, 180, 180)",display: "flex",fontSize: "1.5rem",justifyContent: "center", alignItems: "center",borderRadius: "9999px",paddingLeft: "2rem", paddingRight: "2rem", color: "#fff",backgroundImage: "linear-gradient(to bottom right, #4F46E5, #C54CC5, #EC4899)" }} />
             </div>
         </div>
     );
