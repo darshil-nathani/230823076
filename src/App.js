@@ -9,7 +9,7 @@ function App() {
     alignItems: 'center',
     padding: '0.5rem 2rem',
    }}>
-      <Highlight />
+      {/* <Highlight /> */}
       <TopNavbar />
     </div>
   );
