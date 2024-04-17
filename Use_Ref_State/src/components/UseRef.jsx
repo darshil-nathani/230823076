@@ -17,7 +17,6 @@ export default function UseRef() {
     }
     function click() {
         console.log(`Name:${inputNameRef.current.value},City:${inputCityRef.current.value},Mobile no:${inputMobileRef.current.value},Email:${inputEmailRef.current.value}`)
-
     }
     // useEffect(() => {
     //     console.log(`Name:${inputNameRef.current.value},City:${inputCityRef.current.value},Mobile no:${inputMobileRef.current.value},Email:${inputEmailRef.current.value}`)
@@ -37,16 +36,7 @@ export default function UseRef() {
                 <label htmlFor="">Email : </label>
                 <input type="text" onChange={(e) => setEmail(e.target.value)} name="Email" ref={inputEmailRef} style={{  border: '2px solid black',padding: '8px',borderRadius: '5px',marginBottom: '10px', }} /><br/>
                 <button type="submit" onClick={click}
-                 style={{ backgroundColor: '#ff5733',
-                 color: '#fff',              
-                 padding: '10px 20px',      
-                 border: 'none',             
-                 borderRadius: '5px',        
-                 cursor: 'pointer',          
-                 fontSize: '16px',           
-                 fontWeight: 'bold',         
-                 boxShadow: '0px 3px 5px rgba(0,0,0,0.3)', 
-                 transition: 'background-color 0.3s ease'}}>
+                    style={{ backgroundColor: '#ff5733',color: '#fff',padding: '10px 20px',border: 'none',borderRadius: '5px',cursor: 'pointer',fontSize: '16px',fontWeight: 'bold', boxShadow: '0px 3px 5px rgba(0,0,0,0.3)',transition: 'background-color 0.3s ease'}}>
                     submit
                 </button>
             </form>
