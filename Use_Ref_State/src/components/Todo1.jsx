@@ -34,6 +34,7 @@ let student = [
 export default function Todo1() {
     const [data , setdata] = useState(student);
     const [filteredData, setFilteredData] = useState(data);
+    const [formData, setFormData] = useState({ name: '', city: '', age: '' });
 
   const filter = () => {
     const filtered = data.filter(item => item.city === "rajkot");
@@ -47,24 +48,29 @@ export default function Todo1() {
     const filtered = data;
     setFilteredData(filtered);
   };
-  const handlesybmit = (event) =>{
-    const dataadd = event.target.value
-    const adddata = [...data,dataadd]
-    setdata(adddata)
-  }
-  const Submit = ()=>{
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+        ...prevState,
+        [name]: value
+    }));
+};
+const handleSubmit = (e) => {
+  const newData = [...data, formData];
+  setdata(newData);
+  setFormData({ name: '', city: '', age: '' }); 
+};
 
-  }
 
   return (
     
     <>
         <div className='container justfy-center'>
-            <div className='ml-3 col-3'>
-              <input type="text" placeholder='name' onChange={handlesybmit}/>
-              <input type="text" placeholder='city'onChange={handlesybmit}/>
-              <input type="text" placeholder='age'onChange={handlesybmit}/>
-              <button onClick={Submit}>Add</button>
+            <div className='ml-3 display-flex'>
+              <input type="text" placeholder='name' onChange={handleInputChange}/>
+              <input type="text" placeholder='city'onChange={handleInputChange}/>
+              <input type="text" placeholder='age'onChange={handleInputChange}/>
+              <button onClick={handleSubmit}>Add</button>
             </div>
             <div className='ml-3'>
             <button onClick={filter} className='btn btn-danger '>rajkot</button>
