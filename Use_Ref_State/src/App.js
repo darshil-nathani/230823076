@@ -1,10 +1,9 @@
-import UseRef from "./components/UseRef";
-
+import Todo1 from "./components/Todo1";
 
 function App() {
   return (
-    <div style={{ "margin": "30px" }}>
-      < UseRef />
+    <div>
+      <Todo1 />
     </div>
   );
 }

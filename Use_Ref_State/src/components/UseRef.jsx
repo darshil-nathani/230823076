@@ -18,13 +18,12 @@ export default function UseRef() {
     function click() {
         console.log(`Name:${inputNameRef.current.value},City:${inputCityRef.current.value},Mobile no:${inputMobileRef.current.value},Email:${inputEmailRef.current.value}`)
     }
-    // useEffect(() => {
-    //     console.log(`Name:${inputNameRef.current.value},City:${inputCityRef.current.value},Mobile no:${inputMobileRef.current.value},Email:${inputEmailRef.current.value}`)
-    // }, [setName, setCity, setMobile, setEmail])
+    useEffect(() => {
+        console.log(`Name:${inputNameRef.current.value},City:${inputCityRef.current.value},Mobile no:${inputMobileRef.current.value},Email:${inputEmailRef.current.value}`)
+    }, [setName, setCity, setMobile, setEmail])
 
     return (
         <>
-
             <h2 style={{ marginBottom: '20px',color: '#333', fontSize: '24px'}}>{`${Name},${City},${Mobile},${Email}`}</h2><br />
             <form onSubmit={handlesubmit}>
                 <label htmlFor="">name : </label>
@@ -40,7 +39,6 @@ export default function UseRef() {
                     submit
                 </button>
             </form>
-
         </>
     );
 };
