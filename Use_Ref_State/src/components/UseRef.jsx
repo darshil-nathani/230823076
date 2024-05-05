@@ -24,7 +24,7 @@ export default function UseRef() {
 
     return (
         <>
-            <h2 style={{ marginBottom: '20px',color: '#333', fontSize: '24px'}}>{`${Name},${City},${Mobile},${Email}`}</h2><br />
+            <h2 style={{ marginBottom: '20px',color: '#333',backgroundColor: City === 'rajkot' ? 'red' : 'pink', fontSize: '24px'}}>{`${Name},${City},${Mobile},${Email}`}</h2><br />
             <form onSubmit={handlesubmit}>
                 <label htmlFor="">name : </label>
                 <input type="text" onChange={(e) => setName(e.target.value)} name="Name" ref={inputNameRef} style={{  border: '2px solid black',padding: '8px',borderRadius: '5px',marginBottom: '10px', }} /><br/>
@@ -39,6 +39,9 @@ export default function UseRef() {
                     submit
                 </button>
             </form>
+            <div>
+                
+            </div>
         </>
     );
 };
