@@ -34,7 +34,9 @@ let student = [
 export default function Todo1() {
     const [data , setdata] = useState(student);
     const [filteredData, setFilteredData] = useState(data);
-    const [formData, setFormData] = useState({ name: '', city: '', age: '' });
+    const [name, setname] = useState("");
+    const [city, setcity] = useState("");
+    const [age, setage] = useState("");
 
   const filter = () => {
     const filtered = data.filter(item => item.city === "rajkot");
@@ -48,28 +50,33 @@ export default function Todo1() {
     const filtered = data;
     setFilteredData(filtered);
   };
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prevState => ({
-        ...prevState,
-        [name]: value
-    }));
-};
-const handleSubmit = (e) => {
-  const newData = [...data, formData];
-  setdata(newData);
-  setFormData({ name: '', city: '', age: '' }); 
-};
+
+  const handleInputChange = (name,city,age)=>{
+      const addItem = [...data,
+        {name: name,city: city,age: age}];
+        setFilteredData(addItem);
+  };
+  
+  const handleSubmit = ()=>{
+    handleInputChange(name,city,age);
+    setname("");
+    setcity("");
+    setage("");
+  };
+  const hendledelete = (findname)=>{
+    const remove=data.filter(item => item.name != findname);
+      console.log(`${findname}`);
+      setFilteredData(remove);
+  }
 
 
   return (
-    
     <>
         <div className='container justfy-center'>
             <div className='ml-3 display-flex'>
-              <input type="text" placeholder='name' onChange={handleInputChange}/>
-              <input type="text" placeholder='city'onChange={handleInputChange}/>
-              <input type="text" placeholder='age'onChange={handleInputChange}/>
+              <input type="text" value={name} placeholder='name' onChange={(e)=>setname(e.target.value)}/>
+              <input type="text" value={city} placeholder='city'onChange={(e)=>setcity(e.target.value)}/>
+              <input type="text" value={age} placeholder='age'onChange={(e)=>setage(e.target.value)}/>
               <button onClick={handleSubmit}>Add</button>
             </div>
             <div className='ml-3'>
@@ -82,7 +89,7 @@ const handleSubmit = (e) => {
                 <div className="card-body">
                     <h5 className="card-title">{item.name}</h5>
                     <p className="card-text">{item.city}</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
+                    <button className="btn btn-primary" onClick={()=>hendledelete(`${item.name}`)}>Go somewhere</button>
                 </div>
             </div>
             )}
