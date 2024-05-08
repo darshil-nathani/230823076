@@ -6,8 +6,8 @@ import UseRef from "./components/UseRef";
 function App() {
   return (
     <div>
-      <Todo1 />
-      {/* <Exam1 /> */}
+      {/* <Todo1 /> */}
+      <Exam1 />
       {/* <Exam2 /> */}
     </div>
   );

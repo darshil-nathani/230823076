@@ -38,8 +38,8 @@ export default function Exam1() {
     }
   return (
    <>
-   <div>
-    <div>
+   <div className='row'> 
+    <div className='col-md-6'>
         <form action="">
             <label htmlFor="">Your_name : </label>
             <input type="text" name='name' onChange={(e) => changeHandler(e)} /><br /><br />
@@ -52,11 +52,15 @@ export default function Exam1() {
             <button type='submit' onClick={colorchange}>Submit</button>
         </form>
     </div>
-    <div style={{'backgroundColor' : change, width:"500px",textAlign:"center"}}>
-        <h2>{`${data[0].yourname}`}</h2>
-        <h2>{`${data[0].Fathername}`}</h2>
-        <h2>{`${data[0].Email}`}</h2>
-        <h2>{`${data[0].Mobile}`}</h2>
+    <div className='col-md-6' style={{'backgroundColor' : change, width:"500px",textAlign:"center", border:"2px solid black"}}>
+        <h2 className='mb-2 fs-5'>Name : </h2>
+        <h2 className='mb-5'>{`${data[0].yourname}`}</h2>
+        <h2 className='mb-2 fs-5' >Father Name : </h2>
+        <h2 className='mb-5'>{`${data[0].Fathername}`}</h2>
+        <h2 className='mb-2 fs-5'>Email : </h2>       
+        <h2 className='mb-5'>{`${data[0].Email}`}</h2>
+        <h2 className='mb-2 fs-5'>Mobile : </h2>
+        <h2 className='mb-5'>{`${data[0].Mobile}`}</h2>
     </div>
     </div>
    </>
